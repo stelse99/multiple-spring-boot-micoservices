@@ -1,0 +1,8 @@
+docker login
+docker build -t your-dockerhub-username/your-image-name:your-tag .
+docker push your-dockerhub-username/your-image-name:your-tag
+docker build -t my-image-name:my-tag .
+docker build -t my-image:my-tag -f /path/to/my/custom/Dockerfile .
+kubectl apply -f combined.yaml
+kubectl apply -f file1.yaml -f file2.yaml -f file3.yaml
+
