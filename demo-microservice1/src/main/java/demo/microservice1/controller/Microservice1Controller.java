@@ -31,7 +31,7 @@ public class Microservice1Controller {
 		// For simplicity we are directly configuring the url earlier.
 		// For production ready applications it should be populated from the AWS param
 		// store or the properties file.
-		final String microservice2Url = "http://microservice2:10092/microservice2";
+		final String microservice2Url = "http://microservice2:8082/microservice2";
 		final String response = (String) restTemplate.exchange(microservice2Url, HttpMethod.GET, null, String.class)
 				.getBody();
 
