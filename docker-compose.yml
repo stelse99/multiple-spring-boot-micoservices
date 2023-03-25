@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  spring-app-1:
+  demo-microservice1:
     #image: demo-microservice1:latest
     image: j2eeexpert2015/demo-microservice1:latest
     #image: ghcr.io/j2eeexpert2015/demo-microservice1:latest
@@ -11,7 +11,7 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8081:8081"
-  spring-app-2:
+  demo-microservice2:
     #image: demo-microservice2:latest
     image: j2eeexpert2015/demo-microservice2:latest
     #image: ghcr.io/j2eeexpert2015/demo-microservice2:latest

@@ -28,7 +28,7 @@ public class Microservice1Controller {
 	String displayDefaultMessageWithParameter() {
 		// Hitting the microservice2 from microservice1 to fetch the response.
 		//final String microservice2Url = "http://localhost:8082/testcall";
-		final String microservice2Url = "http://spring-app-2:8082/testcall";
+		final String microservice2Url = "http://demo-microservice2:8082/testcall";
 		final String response = (String) restTemplate.exchange(microservice2Url, HttpMethod.GET, null, String.class)
 				.getBody();
 
