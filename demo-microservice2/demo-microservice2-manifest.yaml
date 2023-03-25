@@ -14,7 +14,8 @@ spec:
     spec:
       containers:
       - name: demo-microservice2-container
-        image: your-registry/your-repo/your-image-name:tag
+        image: j2eeexpert2015/demo-microservice2:latest
+        #image: demo-microservice2:latest
         ports:
         - containerPort: 8082
 ---
