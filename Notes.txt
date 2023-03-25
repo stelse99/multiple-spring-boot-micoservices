@@ -11,4 +11,13 @@ kubectl apply -f file1.yaml -f file2.yaml -f file3.yaml
 docker build . -t j2eeexpert2015/demo-microservice1:latest -f /demo-microservice1/Dockerfile
 docker build . -t j2eeexpert2015/demo-microservice2:latest -f /demo-microservice2/Dockerfile
 docker-compose push
+kubectl get deployments
+kubectl get svc
+kubectl delete deployment your-deployment-name
+kubectl delete service -n your-namespace your-service-name
+kubectl get pods -l app=demo-microservice1
+kubectl logs your-pod-name
+
+
+
 
