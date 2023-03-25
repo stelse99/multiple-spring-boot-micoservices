@@ -27,10 +27,8 @@ public class Microservice1Controller {
 	@RequestMapping("/callmicroservice2")
 	String displayDefaultMessageWithParameter() {
 		// Hitting the microservice2 from microservice1 to fetch the response.
-		// For simplicity we are directly configuring the url earlier.
-		// For production ready applications it should be populated from the AWS param
-		// store or the properties file.
-		final String microservice2Url = "http://localhost:8082/testcall";
+		//final String microservice2Url = "http://localhost:8082/testcall";
+		final String microservice2Url = "http://spring-app-2:8082/testcall";
 		final String response = (String) restTemplate.exchange(microservice2Url, HttpMethod.GET, null, String.class)
 				.getBody();
 
