@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-microservice2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-microservice2
+  template:
+    metadata:
+      labels:
+        app: demo-microservice2
+    spec:
+      containers:
+      - name: demo-microservice2-container
+        image: your-registry/your-repo/your-image-name:tag
+        ports:
+        - containerPort: 8082
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-microservice2-service
+spec:
+  selector:
+    app: demo-microservice2
+  ports:
+    - protocol: TCP
+      port: 8082
+      targetPort: 8082
+  type: LoadBalancer
