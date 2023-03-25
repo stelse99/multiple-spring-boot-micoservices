@@ -22,7 +22,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: demo-microservice2-service
+  name: demo-microservice2
 spec:
   selector:
     app: demo-microservice2
