@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  spring-app-1:
+    image: demo-microservice1
+    container_name: demo-microservice1
+    build:
+      context: ./demo-microservice1
+      dockerfile: Dockerfile
+    ports:
+      - "8081:8081"
+  spring-app-2:
+    image: demo-microservice2
+    container_name: demo-microservice2
+    build:
+      context: ./demo-microservice2
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082"
