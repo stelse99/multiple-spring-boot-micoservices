@@ -1,22 +1,52 @@
+Maven Commands
+--------------
+mvn clean install
+
+Docker Commands
+---------------
 docker version
 docker login
-docker login ghcr.io -u j2eeexpert2015@gmail.com -p personal-access-token
-docker build -t your-dockerhub-username/your-image-name:your-tag .
-docker push your-dockerhub-username/your-image-name:your-tag
 docker build -t my-image-name:my-tag .
 docker build -t my-image:my-tag -f /path/to/my/custom/Dockerfile .
-kubectl apply -f combined.yaml
-kubectl apply -f file1.yaml -f file2.yaml -f file3.yaml
 
-docker build . -t j2eeexpert2015/demo-microservice1:latest -f /demo-microservice1/Dockerfile
-docker build . -t j2eeexpert2015/demo-microservice2:latest -f /demo-microservice2/Dockerfile
+Docker login for GitHub Container Registry
+------------------------------------------
+docker login ghcr.io -u j2eeexpert2015@gmail.com -p personal-access-token
+
+#Docker image build and push using Dockefile
+docker build -t j2eeexpert2015/demo-microservice1:latest .
+docker build -t j2eeexpert2015/demo-microservice2:latest .
+
+docker push j2eeexpert2015/demo-microservice1:latest
+docker push j2eeexpert2015/demo-microservice2:latest
+
+Docker image build and push using docker-compose.yml
+----------------------------------------------------
+docker-compose build 
 docker-compose push
+
+K8 Commands
+-----------
+kubectl apply -f combined.yaml
+kubectl apply -f demo-microservice1-manifest.yaml -f demo-microservice2-manifest.yaml
 kubectl get deployments
 kubectl get svc
+
 kubectl delete deployment your-deployment-name
 kubectl delete service -n your-namespace your-service-name
+
+kubectl delete --all services
+kubectl delete --all pods
+kubectl delete --all deployments
+kubectl delete all --all --dry-run
+
 kubectl get pods -l app=demo-microservice1
 kubectl logs your-pod-name
+
+URLs
+----
+http://localhost:8081/callmicroservice2
+http://localhost:8082
 
 
 
