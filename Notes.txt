@@ -22,7 +22,10 @@ docker push j2eeexpert2015/demo-microservice2:latest
 
 Docker image build and push using docker-compose.yml
 ----------------------------------------------------
-docker-compose build 
+docker-compose build
+docker-compose up
+docker-compose up -d 
+docker-compose down  
 docker-compose push
 
 K8 Commands
