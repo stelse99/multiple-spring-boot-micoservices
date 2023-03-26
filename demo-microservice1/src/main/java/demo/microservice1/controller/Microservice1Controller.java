@@ -9,10 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import demo.microservice1.config.AppConfig;
+
 @RestController
 public class Microservice1Controller {
 
 	private final static Logger LOGGER = LoggerFactory.getLogger(Microservice1Controller.class);
+	
+	@Autowired
+    private AppConfig appConfig;
 
 	@Autowired
 	RestTemplate restTemplate;
@@ -26,9 +31,8 @@ public class Microservice1Controller {
 
 	@RequestMapping("/callmicroservice2")
 	String displayDefaultMessageWithParameter() {
-		// Hitting the microservice2 from microservice1 to fetch the response.
-		//final String microservice2Url = "http://localhost:8082/testcall";
-		final String microservice2Url = "http://demo-microservice2:8082/testcall";
+		LOGGER.info("Host name to access is {}", appConfig.getService2Host());
+		final String microservice2Url = "http://"+appConfig.getService2Host()+":8082/testcall";
 		final String response = (String) restTemplate.exchange(microservice2Url, HttpMethod.GET, null, String.class)
 				.getBody();
 

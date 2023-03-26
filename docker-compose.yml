@@ -11,6 +11,8 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8081:8081"
+    environment:
+      - demo-microservice2-host=demo-microservice2
   demo-microservice2:
     #image: demo-microservice2:latest
     image: j2eeexpert2015/demo-microservice2:latest
