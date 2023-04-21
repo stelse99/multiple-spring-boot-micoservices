@@ -14,6 +14,7 @@ services:
       - "5005:5005" # Expose the debug port      
     environment:
       - demo-microservice2-host=demo-microservice2
+      - demo-microservice2-port=8082          
       - JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
       #- JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 # JDK 9 onwards      
   demo-microservice2:
