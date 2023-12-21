@@ -3,8 +3,8 @@ version: '3'
 services:
   demo-microservice1:
     #image: demo-microservice1:latest
-    image: j2eeexpert2015/demo-microservice1:latest
-    #image: ghcr.io/j2eeexpert2015/demo-microservice1:latest
+    image: stelse99/demo-microservice1:latest
+    #image: ghcr.io/stelse99/demo-microservice1:latest
     container_name: demo-microservice1
     build:
       context: ./demo-microservice1
@@ -15,12 +15,12 @@ services:
     environment:
       - demo-microservice2-host=demo-microservice2
       - demo-microservice2-port=8082          
-      - JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
-      #- JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 # JDK 9 onwards      
+      #- JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
+      - JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005 # JDK 9 onwards
   demo-microservice2:
     #image: demo-microservice2:latest
-    image: j2eeexpert2015/demo-microservice2:latest
-    #image: ghcr.io/j2eeexpert2015/demo-microservice2:latest
+    image: stelse99/demo-microservice2:latest
+    #image: ghcr.io/stelse99/demo-microservice2:latest
     container_name: demo-microservice2
     build:
       context: ./demo-microservice2
@@ -29,5 +29,5 @@ services:
       - "8082:8082" # Expose the application port
       - "5006:5006" # Expose the debug port     
     environment:
-      #- JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5006 # JDK 9 onwards
-      - JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006                               
+      - JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5006 # JDK 9 onwards
+      #- JAVA_TOOL_OPTIONS=-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5006

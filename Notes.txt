@@ -11,22 +11,28 @@ docker build -t my-image:my-tag -f /path/to/my/custom/Dockerfile .
 
 Docker login for GitHub Container Registry
 ------------------------------------------
-docker login ghcr.io -u j2eeexpert2015@gmail.com -p personal-access-token
+docker login ghcr.io -u stelse99@gmail.com -p personal-access-token
 
 #Docker image build and push using Dockefile
-docker build -t j2eeexpert2015/demo-microservice1:latest .
-docker build -t j2eeexpert2015/demo-microservice2:latest .
+docker build -t stelse99/demo-microservice1:latest .
+docker build -t stelse99/demo-microservice2:latest .
 
-docker push j2eeexpert2015/demo-microservice1:latest
-docker push j2eeexpert2015/demo-microservice2:latest
+docker push stelse99/demo-microservice1:latest
+docker push stelse99/demo-microservice2:latest
 
 Docker image build and push using docker-compose.yml
 ----------------------------------------------------
-docker-compose build
-docker-compose up
-docker-compose up -d 
-docker-compose down  
-docker-compose push
+docker compose build
+docker compose up
+docker compose up -d
+docker compose down
+docker compose push
+
+docker compose -f ./docker-compose-debug.yml build
+docker compose -f ./docker-compose-debug.yml up
+
+
+
 
 K8 Commands
 -----------
