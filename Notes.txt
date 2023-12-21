@@ -32,7 +32,17 @@ docker compose -f ./docker-compose-debug.yml build
 docker compose -f ./docker-compose-debug.yml up
 
 
+ghcr command
+-----------
+cat token.txt | docker login https://ghcr.io -u stelse99 --password-stdin
+docker commit demo-microservice1 ghcr.io/stelse99/demo-microservice1:latest
+docker commit demo-microservice2 ghcr.io/stelse99/demo-microservice2:latest
 
+#docker tag stelse99/demo-microservice1:latest ghcr.io/stelse99/demo-microservice1:latest
+#docker tag stelse99/demo-microservice2:latest ghcr.io/stelse99/demo-microservice2:latest
+
+docker push ghcr.io/stelse99/demo-microservice1:latest
+docker push ghcr.io/stelse99/demo-microservice2:latest
 
 K8 Commands
 -----------
